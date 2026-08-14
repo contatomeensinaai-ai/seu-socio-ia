@@ -1,17 +1,24 @@
 {
   "name": "seu-socio-ia",
-  "version": "2.0.0",
+  "version": "2.0.0+codex.20260814204129",
   "description": "Arquiteto conversacional que cria o sistema de agentes do aluno do zero.",
-  "author": { "name": "Seu Sócio de IA" },
+  "author": {
+    "name": "Seu S\u00f3cio de IA"
+  },
   "license": "Proprietary",
   "skills": "./skills/",
   "interface": {
-    "displayName": "Seu Sócio de IA",
+    "displayName": "Seu S\u00f3cio de IA",
     "shortDescription": "Crie seu primeiro sistema de agentes por conversa.",
-    "longDescription": "Um Arquiteto conversacional que entende o negócio do aluno e cria localmente a primeira estrutura de agentes após confirmação.",
-    "developerName": "Seu Sócio de IA",
+    "longDescription": "Um Arquiteto conversacional que entende o neg\u00f3cio do aluno e cria localmente a primeira estrutura de agentes ap\u00f3s confirma\u00e7\u00e3o.",
+    "developerName": "Seu S\u00f3cio de IA",
     "category": "Productivity",
-    "capabilities": ["Interactive", "Write"],
-    "defaultPrompt": ["Quero montar meu Sócio de IA."]
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Quero montar meu S\u00f3cio de IA."
+    ]
   }
 }

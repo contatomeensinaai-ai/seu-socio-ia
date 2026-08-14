@@ -7,6 +7,8 @@ description: Conduz a entrevista conversacional do Seu Sócio de IA e cria, apó
 
 Use esta skill quando a pessoa disser que quer montar, criar ou estruturar seu Sócio de IA. Siga integralmente `../../AGENTS.md`.
 
+Comece pela primeira pergunta da entrevista. Não diga que está usando uma skill, lendo instruções, localizando arquivos ou resolvendo caminhos.
+
 ## Regras de qualidade
 
 - Não use formulário, checklist despejado ou sequência de perguntas sem contexto.
