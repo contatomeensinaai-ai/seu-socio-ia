@@ -15,7 +15,9 @@ Comece pela primeira pergunta da entrevista. Não diga que está usando uma skil
 - Faça perguntas abertas, depois perguntas de aprofundamento orientadas pela resposta.
 - Reflita o que entendeu em linguagem simples antes de recomendar agentes.
 - Não recomende agentes genéricos sem ligá-los a um gargalo confirmado.
-- Prefira o menor sistema que gere resultado: três a cinco agentes na primeira versão.
+- Não recomende agentes antes dos seis blocos obrigatórios da entrevista estarem concluídos.
+- Prefira o menor sistema que gere resultado. A quantidade de agentes é definida pelos gargalos confirmados, nunca por um número pré-fixado.
+- Não ofereça opções de aplicativo, integração, automação ou conexão externa. A entrega desta skill termina nos agentes locais criados no Codex.
 
 ## Plano que deve ser apresentado antes de criar arquivos
 

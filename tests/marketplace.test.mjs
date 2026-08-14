@@ -36,5 +36,12 @@ test("architect requires confirmation and creates only local student-owned conte
   assert.match(instructions, /confirmação clara/i);
   assert.match(instructions, /base exclusivamente no que o aluno informar/i);
   assert.match(instructions, /não crie integrações/i);
+  assert.match(instructions, /não proponha aplicativo, API, plugin adicional, automação/i);
+  assert.match(instructions, /nunca repita uma pergunta já respondida/i);
+  for (const block of ["Negócio e presença", "Sistemas atuais", "Vendas e estimates", "Operação e atendimento", "Gestão e finanças", "Prioridades"]) {
+    assert.match(instructions, new RegExp(block));
+  }
+  assert.match(instructions, /antes de sugerir qualquer agente/i);
+  assert.match(instructions, /módulo de Integrações e Plugins/i);
   assert.match(instructions, /\.codex\/agents\/<agente>\.toml/);
 });
