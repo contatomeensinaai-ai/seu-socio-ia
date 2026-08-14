@@ -1,4 +1,0 @@
-interface:
-  display_name: "Auditar sistemas de agentes"
-  short_description: "Audita importações de agentes com segurança"
-  default_prompt: "Use $auditing-imported-agent-systems para avaliar esta estrutura importada sem executar conteúdo ou expor segredos."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Criativos Gamificados"
-  short_description: "Cria conceitos gamificados para Meta Ads"
-  default_prompt: "Use $criando-anuncios-gamificados para criar três conceitos de anúncio gamificado para minha oferta."

@@ -1,6 +1,0 @@
-interface:
-  display_name: "Roteirista de Reels"
-  short_description: "Cria Reels humanos, estratégicos e graváveis"
-  default_prompt: "Use $roteirista-reels para transformar esta ideia em um Reel completo e pronto para gravar."
-policy:
-  allow_implicit_invocation: true

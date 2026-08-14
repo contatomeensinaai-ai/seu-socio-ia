@@ -1,4 +1,0 @@
-interface:
-  display_name: "Construir sites mobile first"
-  short_description: "Implementa sites locais mobile first com segurança"
-  default_prompt: "Use $building-mobile-first-sites para implementar este site local com TDD, acessibilidade e preparação segura para deploy."

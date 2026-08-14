@@ -1,4 +1,0 @@
-interface:
-  display_name: "Onboarding de Novos Clientes"
-  short_description: "Estrutura onboarding seguro de novos clientes"
-  default_prompt: "Use $onboarding-new-clients para estruturar um onboarding seguro após venda e escopo confirmados."

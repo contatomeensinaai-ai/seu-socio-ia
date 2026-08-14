@@ -1,4 +1,0 @@
-interface:
-  display_name: "Organizar projeto Codex"
-  short_description: "Organiza projetos e artefatos reutilizáveis da SOU"
-  default_prompt: "Use $codex-project-workflow para organizar este trabalho no workspace da SOU e preservar os artefatos reutilizáveis."

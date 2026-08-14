@@ -1,19 +1,11 @@
 {
   "name": "seu-socio-ia",
-  "interface": {
-    "displayName": "Seu Socio Ia"
-  },
+  "interface": { "displayName": "Seu Sócio de IA" },
   "plugins": [
     {
       "name": "seu-socio-ia",
-      "source": {
-        "source": "local",
-        "path": "./plugins/seu-socio-ia"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
+      "source": { "source": "local", "path": "./plugins/seu-socio-ia" },
+      "policy": { "installation": "AVAILABLE", "authentication": "ON_INSTALL" },
       "category": "Productivity"
     }
   ]
