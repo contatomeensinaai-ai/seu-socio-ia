@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="cta-url" content="">
+    <title>Órbita | Uma rotina que cabe no dia</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17231d;
+        --paper: #f6f5ed;
+        --surface: #ffffff;
+        --accent: #bafc66;
+        --accent-strong: #245b39;
+        --muted: #5c675f;
+        --line: #cdd5ce;
+        --radius: 1.25rem;
+        --shadow: 0 1rem 3rem rgba(23, 35, 29, 0.1);
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 0;
+        margin: 0;
+        overflow-x: clip;
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.55;
+      }
+
+      a,
+      button {
+        font: inherit;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      :focus-visible {
+        outline: 0.2rem solid var(--accent-strong);
+        outline-offset: 0.2rem;
+        border-radius: 0.25rem;
+      }
+
+      .skip-link {
+        position: fixed;
+        z-index: 10;
+        top: 0.5rem;
+        left: 0.5rem;
+        padding: 0.75rem 1rem;
+        transform: translateY(-160%);
+        border: 0.125rem solid var(--ink);
+        border-radius: 999px;
+        background: var(--accent);
+        font-weight: 800;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .shell {
+        width: min(100% - 2rem, 72rem);
+        margin-inline: auto;
+      }
+
+      header {
+        padding-block: 1rem;
+      }
+
+      .topbar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem 1rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        min-height: 2.75rem;
+        font-size: 1.05rem;
+        font-weight: 900;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: inline-grid;
+        width: 2rem;
+        height: 2rem;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: inset 0 0 0 0.35rem var(--ink);
+      }
+
+      nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      nav a {
+        display: inline-grid;
+        min-height: 2.75rem;
+        padding-inline: 0.7rem;
+        place-items: center;
+        border-radius: 999px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        background: rgba(23, 35, 29, 0.08);
+      }
+
+      main {
+        display: block;
+      }
+
+      .hero {
+        display: grid;
+        gap: 1.5rem;
+        padding-block: 2.5rem 3rem;
+      }
+
+      .eyebrow {
+        width: fit-content;
+        margin: 0 0 1rem;
+        padding: 0.4rem 0.7rem;
+        border-radius: 999px;
+        background: var(--accent);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        overflow-wrap: anywhere;
+      }
+
+      h1 {
+        max-width: 12ch;
+        margin: 0;
+        font-size: clamp(2.35rem, 11vw, 5.5rem);
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+      }
+
+      .hero-copy > p:not(.eyebrow) {
+        max-width: 40rem;
+        margin: 1.25rem 0 0;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 3vw, 1.3rem);
+      }
+
+      .hero-note {
+        display: grid;
+        min-width: 0;
+        min-height: 17rem;
+        padding: 1.25rem;
+        align-content: end;
+        border: 0.125rem solid var(--ink);
+        border-radius: var(--radius);
+        background:
+          linear-gradient(145deg, transparent 42%, rgba(23, 35, 29, 0.1) 42% 44%, transparent 44%),
+          var(--accent);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-note strong {
+        display: block;
+        max-width: 9ch;
+        font-size: clamp(2rem, 9vw, 4.5rem);
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+      }
+
+      .section {
+        padding-block: 3rem;
+      }
+
+      .section-heading {
+        max-width: 42rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        font-size: clamp(1.8rem, 6vw, 3rem);
+        line-height: 1.05;
+        letter-spacing: -0.035em;
+      }
+
+      .section-heading p {
+        margin: 0.75rem 0 0;
+        color: var(--muted);
+      }
+
+      .cards {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .card {
+        min-width: 0;
+        padding: 1.25rem;
+        border: 0.0625rem solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+      }
+
+      .card-number {
+        display: inline-grid;
+        width: 2.75rem;
+        height: 2.75rem;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--ink);
+        color: var(--accent);
+        font-weight: 900;
+      }
+
+      .card h3 {
+        margin: 1.5rem 0 0.5rem;
+        font-size: 1.3rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .cta-panel {
+        display: grid;
+        gap: 1.25rem;
+        padding: 1.5rem;
+        border-radius: var(--radius);
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .cta-panel h2 {
+        max-width: 14ch;
+        margin: 0;
+        font-size: clamp(1.8rem, 7vw, 3.5rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+      }
+
+      .cta-actions {
+        display: grid;
+        gap: 0.65rem;
+        min-width: 0;
+      }
+
+      .button {
+        display: inline-grid;
+        width: 100%;
+        min-height: 3rem;
+        padding: 0.75rem 1rem;
+        place-items: center;
+        border: 0.125rem solid var(--accent);
+        border-radius: 999px;
+        background: var(--accent);
+        color: var(--ink);
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .button:disabled {
+        cursor: not-allowed;
+        border-color: #859089;
+        background: #859089;
+        color: #17231d;
+      }
+
+      #cta-status {
+        margin: 0;
+        color: #dce4dd;
+        font-size: 0.9rem;
+      }
+
+      footer {
+        padding-block: 2rem;
+      }
+
+      footer p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      #selftest-result {
+        white-space: pre-wrap;
+        overflow-wrap: anywhere;
+      }
+
+      @media (min-width: 48rem) {
+        .shell {
+          width: min(100% - 4rem, 72rem);
+        }
+
+        .hero {
+          grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr);
+          align-items: stretch;
+          padding-block: 5rem;
+        }
+
+        .cards {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .cta-panel {
+          grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.55fr);
+          align-items: center;
+          padding: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <header>
+      <div class="shell topbar">
+        <a class="brand" href="#inicio" aria-label="Órbita, início">
+          <span class="brand-mark" aria-hidden="true"></span>
+          Órbita
+        </a>
+        <nav aria-label="Navegação principal">
+          <ul>
+            <li><a href="#metodo">Método</a></li>
+            <li><a href="#convite">Convite</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="conteudo">
+      <section class="shell hero" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Experimento sintético</p>
+          <h1 id="hero-title">Uma rotina que cabe no seu dia.</h1>
+          <p>
+            Órbita é um conceito fictício de planejamento leve para transformar
+            prioridades em um próximo passo claro.
+          </p>
+        </div>
+        <aside class="hero-note" aria-label="Resumo da proposta">
+          <strong>Menos ruído. Mais ritmo.</strong>
+        </aside>
+      </section>
+
+      <section class="section" id="metodo" aria-labelledby="method-title">
+        <div class="shell">
+          <div class="section-heading">
+            <h2 id="method-title">Três movimentos simples</h2>
+            <p>Uma estrutura curta para organizar energia sem criar mais trabalho.</p>
+          </div>
+          <div class="cards">
+            <article class="card">
+              <span class="card-number" aria-hidden="true">1</span>
+              <h3>Escolha</h3>
+              <p>Defina o resultado que mais importa antes de abrir novas frentes.</p>
+            </article>
+            <article class="card">
+              <span class="card-number" aria-hidden="true">2</span>
+              <h3>Proteja</h3>
+              <p>Reserve um bloco realista e deixe o restante do dia respirar.</p>
+            </article>
+            <article class="card">
+              <span class="card-number" aria-hidden="true">3</span>
+              <h3>Revise</h3>
+              <p>Observe o que avançou e ajuste o próximo passo sem culpa.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell section" id="convite" aria-labelledby="cta-title">
+        <div class="cta-panel">
+          <h2 id="cta-title">Receba o convite quando a próxima turma abrir.</h2>
+          <div class="cta-actions">
+            <button
+              class="button"
+              type="button"
+              data-cta
+              disabled
+              aria-describedby="cta-status"
+            >
+              Quero receber o convite
+            </button>
+            <p id="cta-status" role="status">
+              Inscrições indisponíveis enquanto o destino do convite não está configurado.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="shell">
+        <p>Órbita é uma demonstração local sem coleta de dados.</p>
+      </div>
+    </footer>
+
+    <script>
+      (() => {
+        if (new URLSearchParams(window.location.search).get("selftest") !== "1") {
+          return;
+        }
+
+        const ctaConfig = document
+          .querySelector('meta[name="cta-url"]')
+          ?.getAttribute("content")
+          ?.trim();
+        const cta = document.querySelector("[data-cta]");
+        const landmarkNames = ["header", "nav", "main", "footer"];
+        const landmarksPresent = landmarkNames.every(
+          (name) => document.querySelectorAll(name).length === 1
+        );
+        const labelledSections = [...document.querySelectorAll("section")].every(
+          (section) => {
+            const labelledBy = section.getAttribute("aria-labelledby");
+            return labelledBy && document.getElementById(labelledBy);
+          }
+        );
+        const activeControls = [
+          ...document.querySelectorAll(
+            'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+          ),
+        ];
+        const namedControls = activeControls.every(
+          (control) =>
+            (control.getAttribute("aria-label") || control.textContent).trim().length > 0
+        );
+        const nativeKeyboardControls = activeControls.every(
+          (control) =>
+            (control.tagName === "A" && control.hasAttribute("href")) ||
+            control.tagName === "BUTTON"
+        );
+        const noPositiveTabIndex = !document.querySelector('[tabindex^="1"], [tabindex^="2"], [tabindex^="3"], [tabindex^="4"], [tabindex^="5"], [tabindex^="6"], [tabindex^="7"], [tabindex^="8"], [tabindex^="9"]');
+        const focusRulePresent = [...document.styleSheets].some((sheet) =>
+          [...sheet.cssRules].some((rule) =>
+            String(rule.selectorText || "").includes(":focus-visible")
+          )
+        );
+        const failClosed =
+          !ctaConfig &&
+          cta?.tagName === "BUTTON" &&
+          cta.disabled &&
+          !cta.hasAttribute("href") &&
+          !cta.hasAttribute("onclick") &&
+          Boolean(document.getElementById(cta.getAttribute("aria-describedby")));
+        const width = window.innerWidth;
+        const scrollWidth = document.documentElement.scrollWidth;
+        const noHorizontalOverflow = scrollWidth <= width;
+        const horizontallyContained = [...document.body.querySelectorAll("*")].every(
+          (element) => {
+            const rect = element.getBoundingClientRect();
+            return rect.left >= -0.5 && rect.right <= width + 0.5;
+          }
+        );
+
+        const checks = {
+          requestedWidth: width,
+          scrollWidth,
+          noHorizontalOverflow,
+          horizontallyContained,
+          landmarksPresent,
+          labelledSections,
+          namedControls,
+          nativeKeyboardControls,
+          noPositiveTabIndex,
+          focusRulePresent,
+          failClosed,
+        };
+        const passed = Object.entries(checks).every(
+          ([name, value]) =>
+            ["requestedWidth", "scrollWidth"].includes(name) || value === true
+        );
+        const result = document.createElement("pre");
+        result.id = "selftest-result";
+        result.dataset.status = passed ? "pass" : "fail";
+        result.textContent = JSON.stringify(checks);
+        document.body.append(result);
+      })();
+    </script>
+  </body>
+</html>

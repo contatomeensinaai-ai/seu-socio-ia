@@ -1,0 +1,4 @@
+interface:
+  display_name: "Aplicar contexto da SOU"
+  short_description: "Consulta a memória canônica de Fabio e da SOU"
+  default_prompt: "Use $sou-business-context para consultar a memória canônica da SOU antes de responder."

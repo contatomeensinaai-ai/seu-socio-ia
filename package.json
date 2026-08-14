@@ -1,0 +1,10 @@
+{
+  "name": "seu-socio-ia-marketplace",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Validação do marketplace privado Seu Sócio de IA.",
+  "scripts": {
+    "test": "node --test tests/marketplace.test.mjs && (cd plugins/seu-socio-ia && node --test tests/agent-system/*.test.mjs)",
+    "validate": "node scripts/validate-marketplace.mjs"
+  }
+}

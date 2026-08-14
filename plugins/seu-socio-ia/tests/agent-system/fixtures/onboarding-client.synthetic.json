@@ -1,0 +1,10 @@
+{
+  "fixture": true,
+  "clientId": "synthetic-client-001",
+  "businessType": "synthetic-local-service",
+  "saleConfirmed": true,
+  "scopeApproved": true,
+  "containsPersonalData": false,
+  "externalContactAllowed": false,
+  "remoteRepositoryAllowed": false
+}

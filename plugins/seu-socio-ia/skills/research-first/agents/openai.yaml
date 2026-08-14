@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pesquisar antes de recomendar"
+  short_description: "Valida informações atuais com fontes confiáveis"
+  default_prompt: "Use $research-first para pesquisar e validar as informações atuais antes de recomendar uma decisão."

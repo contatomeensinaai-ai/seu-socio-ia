@@ -1,0 +1,24 @@
+{
+  "name": "seu-socio-ia",
+  "version": "1.0.0",
+  "description": "Sistema privado de agentes, skills e memória de negócio para operar a SOU no Codex.",
+  "author": {
+    "name": "Fabio Borges"
+  },
+  "license": "UNLICENSED",
+  "keywords": ["codex", "seu-socio-ia", "sou", "business", "agents", "skills"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Seu Sócio de IA",
+    "shortDescription": "Sistema privado de agentes e memória da SOU.",
+    "longDescription": "Instala o sistema privado de agentes, skills e memória essencial da SOU para uso no Codex.",
+    "developerName": "Fabio Borges",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Write"],
+    "defaultPrompt": [
+      "Inicie o sistema Seu Sócio de IA.",
+      "Consulte a memória da SOU antes de responder.",
+      "Ajude-me a priorizar a próxima ação do negócio."
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+# Segredos e ambientes
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credential*
+*secret*
+*token*
+
+# Dependências, caches e logs
+node_modules/
+.cache/
+*.log
+npm-debug.log*
+
+# Sistemas e temporários
+.DS_Store
+*.tmp
+*.temp
+tmp/
+temp/
+coverage/
+
+# Mídia, render e build
+*.mp4
+*.mov
+*.avi
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+dist/
+build/

@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "orchestrator": {
+    "id": "carlos-eduardo",
+    "role": "orchestrator"
+  },
+  "policy": {
+    "entrypoint": "carlos-eduardo",
+    "delegationPath": ["carlos-eduardo", "chief", "specialist"],
+    "maxDelegationDepthAfterCarlos": 2,
+    "maxSubagentExecutionsPerRequest": 8,
+    "approvalRequiredAboveLimit": true,
+    "specialistMayDelegate": false,
+    "requiredHandoff": ["owner-chief", "carlos-eduardo"]
+  },
+  "skills": [
+    {
+      "id": "auditing-imported-agent-systems",
+      "path": "skills/auditing-imported-agent-systems/SKILL.md"
+    },
+    {
+      "id": "building-mobile-first-sites",
+      "path": "skills/building-mobile-first-sites/SKILL.md"
+    },
+    {
+      "id": "codex-project-workflow",
+      "path": "skills/codex-project-workflow/SKILL.md"
+    },
+    {
+      "id": "criando-anuncios-gamificados",
+      "path": "skills/criando-anuncios-gamificados/SKILL.md"
+    },
+    {
+      "id": "onboarding-new-clients",
+      "path": "skills/onboarding-new-clients/SKILL.md"
+    },
+    {
+      "id": "research-first",
+      "path": "skills/research-first/SKILL.md"
+    },
+    {
+      "id": "roteirista-reels",
+      "path": "skills/roteirista-reels/SKILL.md"
+    },
+    {
+      "id": "sou-business-context",
+      "path": "skills/sou-business-context/SKILL.md"
+    }
+  ],
+  "departments": [
+    {
+      "id": "strategy-and-direction",
+      "chief": "carlos-eduardo",
+      "specialists": ["explorer", "reviewer", "business-researcher"],
+      "skills": ["sou-business-context", "research-first", "codex-project-workflow"]
+    },
+    {
+      "id": "marketing",
+      "chief": "marketing-chief",
+      "specialists": ["content-strategist", "conversion-copywriter", "creative-director", "brand-strategist", "paid-media-analyst", "meta-ads-specialist", "video-producer", "short-form-video-creator"],
+      "skills": ["sou-business-context", "research-first", "criando-anuncios-gamificados", "roteirista-reels"]
+    },
+    {
+      "id": "revenue",
+      "chief": "revenue-chief",
+      "specialists": ["funnel-strategist", "crm-specialist", "sales-intelligence", "proposal-writer", "cart-recovery-specialist"],
+      "skills": ["sou-business-context", "research-first"]
+    },
+    {
+      "id": "product",
+      "chief": "product-chief",
+      "specialists": ["product-researcher", "offer-architect", "course-architect", "solution-designer"],
+      "skills": ["sou-business-context", "research-first"]
+    },
+    {
+      "id": "engineering",
+      "chief": "engineering-chief",
+      "specialists": ["frontend-engineer", "backend-engineer", "database-engineer", "devops-engineer", "qa-engineer", "finance-invariants-reviewer"],
+      "skills": ["building-mobile-first-sites", "codex-project-workflow"]
+    },
+    {
+      "id": "operations",
+      "chief": "operations-chief",
+      "specialists": ["onboarding-specialist", "implementation-manager", "customer-success-specialist", "communications-coordinator"],
+      "skills": ["onboarding-new-clients", "codex-project-workflow"]
+    },
+    {
+      "id": "data-and-growth",
+      "chief": "data-chief",
+      "specialists": ["growth-analyst", "customer-value-analyst", "retention-analyst", "marketing-performance-analyst"],
+      "skills": ["sou-business-context", "research-first"]
+    },
+    {
+      "id": "finance",
+      "chief": "finance-chief",
+      "specialists": ["cashflow-analyst", "pricing-reviewer", "financial-scenario-analyst"],
+      "skills": ["sou-business-context"]
+    },
+    {
+      "id": "security",
+      "chief": "security-auditor",
+      "specialists": [],
+      "skills": ["auditing-imported-agent-systems"]
+    }
+  ],
+  "agents": [
+    { "id": "explorer", "owner": "carlos-eduardo" },
+    { "id": "reviewer", "owner": "carlos-eduardo" },
+    { "id": "business-researcher", "owner": "carlos-eduardo" },
+    { "id": "content-strategist", "owner": "marketing-chief" },
+    { "id": "conversion-copywriter", "owner": "marketing-chief" },
+    { "id": "creative-director", "owner": "marketing-chief" },
+    { "id": "brand-strategist", "owner": "marketing-chief" },
+    { "id": "paid-media-analyst", "owner": "marketing-chief" },
+    { "id": "meta-ads-specialist", "owner": "marketing-chief" },
+    { "id": "video-producer", "owner": "marketing-chief" },
+    { "id": "short-form-video-creator", "owner": "marketing-chief" },
+    { "id": "funnel-strategist", "owner": "revenue-chief" },
+    { "id": "crm-specialist", "owner": "revenue-chief" },
+    { "id": "sales-intelligence", "owner": "revenue-chief" },
+    { "id": "proposal-writer", "owner": "revenue-chief" },
+    { "id": "cart-recovery-specialist", "owner": "revenue-chief" },
+    { "id": "product-researcher", "owner": "product-chief" },
+    { "id": "offer-architect", "owner": "product-chief" },
+    { "id": "course-architect", "owner": "product-chief" },
+    { "id": "solution-designer", "owner": "product-chief" },
+    { "id": "frontend-engineer", "owner": "engineering-chief" },
+    { "id": "backend-engineer", "owner": "engineering-chief" },
+    { "id": "database-engineer", "owner": "engineering-chief" },
+    { "id": "devops-engineer", "owner": "engineering-chief" },
+    { "id": "qa-engineer", "owner": "engineering-chief" },
+    { "id": "finance-invariants-reviewer", "owner": "engineering-chief" },
+    { "id": "onboarding-specialist", "owner": "operations-chief" },
+    { "id": "implementation-manager", "owner": "operations-chief" },
+    { "id": "customer-success-specialist", "owner": "operations-chief" },
+    { "id": "communications-coordinator", "owner": "operations-chief" },
+    { "id": "growth-analyst", "owner": "data-chief" },
+    { "id": "customer-value-analyst", "owner": "data-chief" },
+    { "id": "retention-analyst", "owner": "data-chief" },
+    { "id": "marketing-performance-analyst", "owner": "data-chief" },
+    { "id": "cashflow-analyst", "owner": "finance-chief" },
+    { "id": "pricing-reviewer", "owner": "finance-chief" },
+    { "id": "financial-scenario-analyst", "owner": "finance-chief" },
+    { "id": "marketing-chief", "owner": "carlos-eduardo" },
+    { "id": "revenue-chief", "owner": "carlos-eduardo" },
+    { "id": "product-chief", "owner": "carlos-eduardo" },
+    { "id": "engineering-chief", "owner": "carlos-eduardo" },
+    { "id": "operations-chief", "owner": "carlos-eduardo" },
+    { "id": "data-chief", "owner": "carlos-eduardo" },
+    { "id": "finance-chief", "owner": "carlos-eduardo" },
+    { "id": "security-auditor", "owner": "carlos-eduardo" }
+  ]
+}
