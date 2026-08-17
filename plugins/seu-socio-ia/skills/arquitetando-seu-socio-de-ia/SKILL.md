@@ -1,6 +1,6 @@
 ---
-name: arquitetando-seu-socio-de-ia
-description: Conduz a entrevista conversacional do Seu Sócio de IA e cria, após confirmação, o primeiro sistema local de agentes do negócio do aluno.
+name: architecting-your-ai-business-partner
+description: Conducts a conversational business interview and creates the student's first local agent system after confirmation.
 ---
 
 # Arquitetar o Seu Sócio de IA
