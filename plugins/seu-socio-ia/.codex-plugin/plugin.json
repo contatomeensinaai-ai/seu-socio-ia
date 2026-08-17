@@ -1,6 +1,6 @@
 {
   "name": "seu-socio-ia",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Arquiteto conversacional que cria o sistema de agentes do aluno do zero.",
   "author": {
     "name": "Seu S\u00f3cio de IA"
@@ -22,7 +22,7 @@
     ],
     "brandColor": "#FF6A00",
     "composerIcon": "./assets/composer-icon.svg",
-    "logo": "./assets/logo-light.svg",
-    "logoDark": "./assets/logo-dark.svg"
+    "logo": "./assets/composer-icon.svg",
+    "logoDark": "./assets/composer-icon.svg"
   }
 }
