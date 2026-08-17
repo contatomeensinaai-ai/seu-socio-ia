@@ -45,3 +45,17 @@ test("architect requires confirmation and creates only local student-owned conte
   assert.match(instructions, /módulo de Integrações e Plugins/i);
   assert.match(instructions, /\.codex\/agents\/<agente>\.toml/);
 });
+
+test("plugin has international activation and branded visual assets", () => {
+  const manifest = JSON.parse(read("plugins/seu-socio-ia/.codex-plugin/plugin.json"));
+  assert.match(manifest.interface.defaultPrompt[0], /^Let's build your AI Business Partner\.$/);
+  assert.equal(manifest.interface.brandColor, "#FF6A00");
+  for (const asset of ["composerIcon", "logo", "logoDark"]) {
+    assert.ok(manifest.interface[asset], `${asset} must be declared`);
+    assert.equal(
+      fs.existsSync(path.join(root, "plugins", "seu-socio-ia", manifest.interface[asset].replace(/^\.\//, ""))),
+      true,
+      `${asset} must point to a shipped asset`,
+    );
+  }
+});

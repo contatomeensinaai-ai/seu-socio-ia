@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Seu Sócio de IA">
+  <rect width="128" height="128" rx="30" fill="#0A0A0A"/>
+  <path d="M30 43 51 28v22L39 59l12 9v22L30 75a20 20 0 0 1 0-32Z" fill="#FF6A00"/>
+  <path d="m98 43-21-15v22l12 9-12 9v22l21-15a20 20 0 0 0 0-32Z" fill="#FF6A00"/>
+  <path d="M48 64h32" stroke="#FFF" stroke-width="8" stroke-linecap="round"/>
+</svg>

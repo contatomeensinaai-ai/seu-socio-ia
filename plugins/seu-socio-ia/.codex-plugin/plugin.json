@@ -1,6 +1,6 @@
 {
   "name": "seu-socio-ia",
-  "version": "2.0.0+codex.20260814210559",
+  "version": "2.1.0",
   "description": "Arquiteto conversacional que cria o sistema de agentes do aluno do zero.",
   "author": {
     "name": "Seu S\u00f3cio de IA"
@@ -18,7 +18,11 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Quero montar meu S\u00f3cio de IA."
-    ]
+      "Let's build your AI Business Partner."
+    ],
+    "brandColor": "#FF6A00",
+    "composerIcon": "./assets/composer-icon.svg",
+    "logo": "./assets/logo-light.svg",
+    "logoDark": "./assets/logo-dark.svg"
   }
 }
