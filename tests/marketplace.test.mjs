@@ -50,7 +50,7 @@ test("plugin has international activation and branded visual assets", () => {
   const manifest = JSON.parse(read("plugins/seu-socio-ia/.codex-plugin/plugin.json"));
   assert.equal(manifest.interface.displayName, "Your AI Business Partner");
   assert.match(manifest.interface.shortDescription, /^Create your first AI agent system/);
-  assert.match(manifest.interface.defaultPrompt[0], /^Let's build your AI Business Partner\.$/);
+  assert.match(manifest.interface.defaultPrompt[0], /^Let's build your AI team\.$/);
   assert.equal(manifest.interface.brandColor, "#FF6A00");
   assert.equal(manifest.interface.logo, "./assets/composer-icon.svg");
   assert.equal(manifest.interface.logoDark, "./assets/composer-icon.svg");

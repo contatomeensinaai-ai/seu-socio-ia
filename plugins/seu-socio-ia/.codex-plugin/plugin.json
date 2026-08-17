@@ -1,6 +1,6 @@
 {
   "name": "seu-socio-ia",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "A conversational Architect that creates a student's local agent system from scratch.",
   "author": {
     "name": "Your AI Business Partner"
@@ -18,7 +18,7 @@
       "Write"
     ],
     "defaultPrompt": [
-      "Let's build your AI Business Partner."
+      "Let's build your AI team."
     ],
     "brandColor": "#FF6A00",
     "composerIcon": "./assets/composer-icon.svg",
